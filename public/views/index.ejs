@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Catálogo de Productos</title>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+        <nav>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+        <main class="grid-container">
+            <% catalog.forEach( function(item) { %>
+            <form>
+                <div class="producto">
+                    <img src="<%= item.photo.substring(7) %>" class="product-image">
+                    <h2><%= item.name %></h2>
+                    <p><%= item.description %></p>
+                    <button class="ver-button" type="submit" formmethod="post" formaction="/productDetail">Ver</button>
+                    <input name="idProduct" value="<%= item.id %>" hidden>
+                </div>
+            </form>
+            <% }); %>
+        </main>
+</body>
+</html>

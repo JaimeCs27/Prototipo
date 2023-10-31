@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleAdd.css">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
+    <main>
+        <h2>Editar Producto</h2>
+        <form enctype="multipart/form-data">
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="nombre" name="nombre" value="<%= item.name %>" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" value="<%= item.description %>" required>
+            <label for="talla">Talla:</label>
+            <input type="text" id="talla" name="talla" value="<%= item.size %>" required>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" value="<%= item.brand %>" required>
+            <label for="precio">Precio:</label>
+            <input type="text" id="precio" name="precio" value="<%= item.price %>" required>
+            <label for="stock">Stock:</label>
+            <input type="text" id="stock" name="stock" value="<%= item.stock %>" required>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" value="<%= item.contacto %>" required>
+            <label for="imagen">Seleccionar imagen:</label>
+            <input id="path" name="path" value="<%= item.photo %>" hidden>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <input name="idProduct" value="<%= item.id %>" hidden>
+            <div class="botones">
+                <button type="submit" formaction="/confirmEdit" formmethod="post" class="agregar-button">Confirmar edición</button>
+                <br>
+                <br>
+                <button id="btnAtras" class="cerrar-button">Atrás</button>
+            </div>
+        </form>
+        <script>
+            document.getElementById('btnAtras').addEventListener('click', function(event) {
+                event.preventDefault(); // Previene la acción por defecto del botón
+                window.location.href = "/admin";
+            });
+        </script>        
+    </main>
+</body>
+</html>

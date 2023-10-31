@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleAdd.css">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
+    <main>
+        <h2>Agregar Producto</h2>
+        <form enctype="multipart/form-data">
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+            <label for="talla">Talla:</label>
+            <input type="text" id="talla" name="talla" required>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+            <label for="precio">Precio:</label>
+            <input type="text" id="precio" name="precio" required>
+            <label for="stock">Stock:</label>
+            <input type="text" id="stock" name="stock" required>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required>
+            <label for="imagen">Seleccionar imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            <div class="botones">
+                <button type="submit" formaction="/addProduct" formmethod="post" class="agregar-button">Agregar</button>
+            </div>
+        </form>
+        <br>
+        <form>
+            <button class="cerrar-button" formaction="/admin" formmethod="get" type="submit">Atrás</button>
+        </form>
+    </main>
+</body>
+</html>

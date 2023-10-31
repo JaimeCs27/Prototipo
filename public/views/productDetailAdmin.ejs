@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Detalles del Producto 1</title>
+</head>
+<body>
+    <header>
+        <h1>Detalles de <%= item.description.toLowerCase() %></h1>
+        <nav>
+            <a href="/">Log out</a>
+        </nav>
+    </header>
+    <main>
+        <div class="producto-detalle">
+            <img src="<%= item.photo.substring(7) %>" width="300px" height="20px">
+            <h2><%= item.name %></h2>
+            <p>Descripción: <%= item.description %></p>
+            <p>Talla: <%= item.size %></p>
+            <p>Marca: <%= item.brand %></p>
+            <p>Precio: <%= item.price %> colones</p>
+            <p>Disponibles: <%= item.stock %></p>
+            <p>Contacto: <%= item.contacto %></p>
+        </div>
+        <button class="cerrar-button" onclick="window.history.back()">Atrás</button>
+    </main>
+</body>
+</html>
